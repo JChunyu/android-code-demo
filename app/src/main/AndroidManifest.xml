@@ -13,13 +13,13 @@
         android:theme="@style/Theme.Test"
         tools:targetApi="31">
         <service
-            android:name=".RemoteDataService"
+            android:name=".appwidget.RemoteDataService"
             android:enabled="true"
             android:exported="true"
             android:permission="android.permission.BIND_REMOTEVIEWS"/>
 
         <receiver
-            android:name=".NewAppWidget"
+            android:name=".appwidget.NewAppWidget"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />

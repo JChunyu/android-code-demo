@@ -1,4 +1,4 @@
-package com.example.test
+package com.example.test.appwidget
 
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
@@ -7,6 +7,7 @@ import android.content.Intent
 import android.os.Build
 import android.widget.RemoteViews
 import androidx.core.widget.RemoteViewsCompat
+import com.example.test.R
 
 /*
 * @author chunyu
@@ -20,16 +21,14 @@ class NewAppWidget : AppWidgetProvider() {
         // There may be multiple widgets active, so update all of them
         for (appWidgetId in appWidgetIds) {
             updateAppWidget(context, appWidgetManager, appWidgetId)
-            updateWithIntent(context, appWidgetManager, appWidgetId)
+//            updateWithIntent(context, appWidgetManager, appWidgetId)
         }
     }
 
     override fun onEnabled(context: Context) {
-
     }
 
     override fun onDisabled(context: Context) {
-        // Enter relevant functionality for when the last widget is disabled
     }
 }
 
@@ -57,7 +56,6 @@ internal fun updateAppWidget(
     // Construct the RemoteViews object
     val views = RemoteViews(context.packageName, R.layout.new_app_widget)
     views.setTextViewText(R.id.appwidget_text, widgetText)
-
     val array = arrayListOf<String>()
     for (i in 0 until 10) {
         array.add("index - $i")
